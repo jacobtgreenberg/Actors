@@ -12,12 +12,12 @@
         <h1>ActorBase</h1>
     </nav>
     <main>
-        <% for(let i = 0;i < allActors.length; i++) { %>
+        <% for(let i = 0;i < actors.length; i++) { %>
         <div>
             <a href=#>
-             <img src= "<%=allActors[i].img %>" >
+             <img src= "<%= actors[i].img %>" >
             </a> <br>
-            <a> <%=allActors[i].name %></a>
+            <a> <%= actors[i].name %></a>
         </div>
         <% } %>
     </main>
