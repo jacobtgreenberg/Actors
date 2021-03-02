@@ -20,7 +20,7 @@ const Actor = require('./models/actormodel.js')
 //ROUTES//
 
 //INDEX//
-app.get('/' , (req, res) => {
+app.get('/', (req, res) => {
     Actor.find({}, (err, allActors) => {
         res.render('index.ejs', {
             actors : allActors
@@ -29,12 +29,12 @@ app.get('/' , (req, res) => {
 })
 
 //NEW//
-app.get('/new' , (req, res) => {
+app.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
 //CREATE//
-app.post('/' , (req, res) => {
+app.post('/', (req, res) => {
     console.log(req.body)
     Actor.create(req.body, (err, newActor) => {
         res.redirect('/')
@@ -56,7 +56,7 @@ app.delete('/:id', (req, res) => {
 })
 
 //SHOW//
-app.get('/:id' , (req, res) => {
+app.get('/:id', (req, res) => {
     Actor.findById(req.params.id ,(err, foundActor) => {
         res.render('show.ejs' , {
             actor : foundActor, 
@@ -64,6 +64,21 @@ app.get('/:id' , (req, res) => {
     })
 })
 
+//EDIT//
+app.get('/:id/edit', (req, res) => {
+    Actor.findById(req.params.id, (err, foundActor) => {
+        res.render('edit.ejs', {
+            actor : foundActor
+        })
+    })
+})
+
+//UPDATE//
+app.put('/:id', (req, res) => {
+    Actor.findByIdAndUpdate(req.params.id, req.body, (err,updatedModel) => {
+        res.redirect(`/${req.params.id}`)
+    })
+})
 
 
 

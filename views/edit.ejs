@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include ('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include ('./partials/nav.ejs') %>
+    <main class='formMain'>
+          <form action="/<%=actor.id%>?_method=PUT" method="POST">
+
+            <div class= "formDiv">
+           <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="<%=actor.name%>"/><br><br>
+            </div>
+
+            <div class= "formDiv">
+            <label for="bio">Bio:</label><br>
+            <textarea id="bio" name="bio"><%=actor.bio%></textarea><br><br>
+            </div>
+
+            <div class= "formDiv">
+            <label for="img_url">Image URL:</label><br>
+            <input type="text" id="img_url" name="img" value="<%=actor.img%>"/><br><br>
+            </div>
+
+            <div class= "formDiv" id="formSubmit">
+            <input type="submit" value="Edit">
+            </div>
+
+          </form>
+    </main>
+</body>
+</html>
