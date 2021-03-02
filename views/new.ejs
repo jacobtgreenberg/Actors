@@ -6,7 +6,7 @@
 <body>
     <%- include ('./partials/nav.ejs') %>
     <main class='formMain'>
-          <form action="/" method="POST" id="form">
+          <form action="/" method="POST">
 
             <div class= "formDiv">
            <label for="name">Name:</label><br>
@@ -23,8 +23,8 @@
             <input type="text" id="img_url" name="img"/><br><br>
             </div>
 
-            <div class= "formDiv" id="formSubmit">
-            <input type="submit" value="Add Actor" form="form">
+            <div class= "formDiv" id="formSubmitDiv">
+            <input type="submit" value="Add Actor" id="submitButton">
             </div>
 
           </form>

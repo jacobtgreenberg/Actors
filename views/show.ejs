@@ -13,9 +13,9 @@
             <div class="right">
                 <p> <%= actor.bio %> </p>
                 <div class="actorButtons">
-                    <a href= "/<%=actor.id%>/edit">Edit</a>
+                    <a href= "/<%=actor.id%>/edit" class="hover">Edit</a>
                     <form action="/<%=actor.id%>?_method=DELETE" method="POST">
-                        <input type=Submit value="Delete Entry">
+                        <input type=Submit value="Delete Entry" class='hover'>
                     </form>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
-    background-color: antiquewhite;
+    background-color: #dde3ed;
     font-family: "Montserrat";
 }
 
@@ -10,29 +10,50 @@ nav, main {
     width: 80%;
     margin: auto;
     max-width: 900px;
-    margin-bottom: 2em;
+    border-radius: 1%;
+    background: #20639B;
 }
 
 main {
     padding: 1em 0 .5em 0;
+    margin-bottom: 2em;
 }
 
 a, a:visited {
     text-decoration: none;
-    color: black
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+img {
+    border: 1px solid black;
+}
+
+.hover:hover {
+    text-decoration: underline;
 }
 
 /* NAV */
 nav {
+    margin: auto;
+    margin-top: 1em;
     margin-bottom: 2em;
-}
-
-nav h1,nav a {
-    display: inline-block
+    display: flex;
+    justify-content: space-between;
 }
 
 h1 {
     padding: 15px;
+}
+
+#navAdd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2em;
 }
 
 /* INDEX */
@@ -79,10 +100,20 @@ img {
 input[type="text"] {
     width: 100%;
     margin: auto;
-    max-width: 250px;
 }
 
+input[type="submit"]{  /*This affects edit, update, and delete*/
+    border: none;
+    font-family: "Montserrat";
+    font-size: 1em;
+    background: none;
+    color: white;
+}
 
+#submitButton {
+    padding: .5em 1em .5em 1em;
+    border: 1px solid black;
+}
 
 textarea {
     width: 100%;
@@ -105,7 +136,8 @@ form {
     width: 40%;
 }
 
-#formSubmit {
+#formSubmitDiv {
     text-align: center;
     margin-bottom: .5em;
 }
+
