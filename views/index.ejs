@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+   <%- include ('./partials/head.ejs') %>
 </head>
 <body>
-    <nav>
-        <h1>ActorBase</h1>
-    </nav>
-    <main>
+    <%- include ('./partials/nav.ejs') %>
+    <main class="indexMain">
         <% for(let i = 0;i < actors.length; i++) { %>
-        <div>
-            <a href=#>
+        <div class="indexActor">
+            <a href="<%=actors[i].id%>">
              <img src= "<%= actors[i].img %>" >
             </a> <br>
-            <a> <%= actors[i].name %></a>
+            <a href="<%=actors[i].id%>"> <%= actors[i].name %></a>
         </div>
         <% } %>
     </main>

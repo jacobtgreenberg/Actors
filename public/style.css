@@ -14,6 +14,10 @@ nav, main {
 }
 
 main {
+    padding: 1em 0 .5em 0;
+}
+
+.indexMain {
     text-align: center;
     padding: 1em 0 .5em 0;
 }
@@ -30,7 +34,34 @@ h1 {
     padding: 15px;
 }
 
-div {
+.indexActor {
     display: inline-block;
     margin: 8px;
+}
+
+#actorImg {
+    width: 80%;
+}
+
+.left, .right {
+    width: 48%;
+}
+
+.left {
+    text-align: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actorMain {
+    display: flex;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: black
 }
