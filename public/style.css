@@ -71,12 +71,18 @@ img {
     justify-content: center;
 }
 
+.actorButtons {
+    display: flex;
+    justify-content: space-around;
+}
 /* FORM */
 input[type="text"] {
     width: 100%;
     margin: auto;
     max-width: 250px;
 }
+
+
 
 textarea {
     width: 100%;

@@ -48,6 +48,13 @@ app.get('/seed', (req, res) => {
     })
 })
 
+//DELETE//
+app.delete('/:id', (req, res) => {
+    Actor.findByIdAndDelete(req.params.id, (err, deletedActor) => {
+        res.redirect('/')
+    })
+})
+
 //SHOW//
 app.get('/:id' , (req, res) => {
     Actor.findById(req.params.id ,(err, foundActor) => {
@@ -56,6 +63,8 @@ app.get('/:id' , (req, res) => {
         })
     })
 })
+
+
 
 
 
