@@ -1,13 +1,23 @@
+//DEPENDENCIES
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const app = express()
+const db = mongoose.connection;
 
-mongoose.connect('mongodb://localhost:27017/actors', {
+//PORT
+const PORT = process.env.PORT || 3000;
+
+//DATABASE
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/actors'
+
+
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
 
-const app = express()
+db.on('open' , ()=>{})
 
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
