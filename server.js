@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 //NEW//
 app.get('/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('test.ejs')
 })
 
 //CREATE//
@@ -67,7 +67,7 @@ app.get('/:id', (req, res) => {
 //EDIT//
 app.get('/:id/edit', (req, res) => {
     Actor.findById(req.params.id, (err, foundActor) => {
-        res.render('edit.ejs', {
+        res.render('test.ejs', {
             actor : foundActor
         })
     })
