@@ -12,6 +12,7 @@ const app = express()
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 const seed = require('./models/seed.js')
 const Actor = require('./models/actormodel.js')
@@ -27,20 +28,18 @@ app.get('/' , (req, res) => {
     })
 })
 
-//SHOW//
-app.get('/:id' , (req, res) => {
-    Actor.findById(req.params.id ,(err, foundActor) => {
-        res.render('show.ejs' , {
-            actor : foundActor
-        })
-    })
-})
-
 //NEW//
 app.get('/new' , (req, res) => {
     res.render('new.ejs')
 })
 
+//CREATE//
+app.post('/' , (req, res) => {
+    console.log(req.body)
+    Actor.create(req.body, (err, newActor) => {
+        res.redirect('/')
+    })
+})
 
 //SEED//
 app.get('/seed', (req, res) => {
@@ -48,6 +47,20 @@ app.get('/seed', (req, res) => {
         res.redirect('/')
     })
 })
+
+//SHOW//
+app.get('/:id' , (req, res) => {
+    Actor.findById(req.params.id ,(err, foundActor) => {
+        res.render('show.ejs' , {
+            actor : foundActor, 
+        })
+    })
+})
+
+
+
+
+
 
 
 

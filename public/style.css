@@ -17,21 +17,27 @@ main {
     padding: 1em 0 .5em 0;
 }
 
-.indexMain {
-    text-align: center;
-    padding: 1em 0 .5em 0;
+a, a:visited {
+    text-decoration: none;
+    color: black
 }
 
+/* NAV */
 nav {
     margin-bottom: 2em;
 }
 
-img {
-    width: 150px; 
+nav h1,nav a {
+    display: inline-block
 }
 
 h1 {
     padding: 15px;
+}
+
+/* INDEX */
+img {
+    width: 150px; 
 }
 
 .indexActor {
@@ -39,6 +45,14 @@ h1 {
     margin: 8px;
 }
 
+.indexMain {
+    text-align: center;
+    padding: 1em 0 .5em 0;
+}
+/* SHOW */
+.actorMain {
+    display: flex;
+}
 #actorImg {
     width: 80%;
 }
@@ -57,11 +71,35 @@ h1 {
     justify-content: center;
 }
 
-.actorMain {
-    display: flex;
+/* FORM */
+input[type="text"] {
+    width: 100%;
+    margin: auto;
+    max-width: 250px;
 }
 
-a, a:visited {
-    text-decoration: none;
-    color: black
+textarea {
+    width: 100%;
+    height: 80px;
+    margin: auto;
+}
+
+label{
+    width:40%
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.formDiv {
+    margin: auto;
+    width: 40%;
+}
+
+#formSubmit {
+    text-align: center;
+    margin-bottom: .5em;
 }

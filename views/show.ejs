@@ -11,7 +11,11 @@
                 <p> <%= actor.name %></p>
             </div>
             <div class="right">
-            <p> <%= actor.bio %> </p>
+                <p> <%= actor.bio %> </p>
+                <a href= "/<%=actor.id%>/edit">Edit</a>
+                <form action="/<%=actor.id%>?_method=DELETE" method="POST">
+                    <input type=Submit value="Delete Entry">
+                </form>
             </div>
     </main>
 </body>
