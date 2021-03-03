@@ -43,13 +43,14 @@ const userController = require('./controllers/users_controller.js')
 app.use('/users', userController)
 const sessionsController = require('./controllers/sessions_controller.js')
 app.use('/sessions', sessionsController)
+const actorsController = require('./controllers/actors_controller.js')
 
 //ROUTES//
 
 //INDEX//
 app.get('/', (req, res) => {
     Actor.find({}, (err, allActors) => {
-        res.render('index.ejs', {
+        res.render('actors/index.ejs', {
             actors : allActors,
             currentUser : req.session.currentUser
         })
@@ -58,7 +59,7 @@ app.get('/', (req, res) => {
 
 //NEW//
 app.get('/new', (req, res) => {
-    res.render('test.ejs', {
+    res.render('actors/test.ejs', {
         currentUser : req.session.currentUser
     })
 })
@@ -88,7 +89,7 @@ app.delete('/:id', (req, res) => {
 //SHOW//
 app.get('/:id', (req, res) => {
     Actor.findById(req.params.id ,(err, foundActor) => {
-        res.render('show.ejs' , {
+        res.render('actors/show.ejs' , {
             actor : foundActor,
             currentUser : req.session.currentUser 
         })
@@ -98,7 +99,7 @@ app.get('/:id', (req, res) => {
 //EDIT//
 app.get('/:id/edit', (req, res) => {
     Actor.findById(req.params.id, (err, foundActor) => {
-        res.render('test.ejs', {
+        res.render('actors/test.ejs', {
             actor : foundActor,
             currentUser : req.session.currentUser
         })
