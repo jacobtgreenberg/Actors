@@ -6,12 +6,12 @@ body {
 }
 
 nav, main {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 80%;
     margin: auto;
     max-width: 900px;
-    border-radius: 1%;
-    background: #20639B;
+    /* border-radius: 1%; */
+    /* background: #20639B; */
 }
 
 main {
@@ -67,13 +67,30 @@ ul li{
 }
 
 /* INDEX */
-img {
-    width: 150px; 
+#actorImageIndex {
+    width: 180px;
+    margin-bottom: 1em; 
+    /* width: 50%; */
+}
+
+
+
+#actorName {
+    /* margin-top: 2em; */
 }
 
 .indexActor {
     display: inline-block;
     margin: 8px;
+    border: 1px solid grey;
+    /* height: 200px;
+    width: 200px; */
+    background: white;
+    padding: 3em 3em 2em 3em;
+}
+
+.indexActor a {
+    color: black;
 }
 
 .indexMain {

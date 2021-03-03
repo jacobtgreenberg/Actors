@@ -9,9 +9,9 @@
         <% for(let i = 0;i < actors.length; i++) { %>
         <div class="indexActor">
             <a href="<%=actors[i].id%>">
-             <img src= "<%= actors[i].img %>" >
+             <img src= "<%= actors[i].img %>" id="actorImageIndex" >
             </a> <br>
-            <a href="<%=actors[i].id%>"> <%= actors[i].name %></a>
+            <a href="<%=actors[i].id%>" id="actorName"> <%= actors[i].name %></a>
         </div>
         <% } %>
     </main>
