@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <%- include ('./partials/head.ejs') %>
+   <%- include ('../partials/head.ejs') %>
 </head>
 <body>
-    <%- include ('./partials/nav.ejs') %>
+    <%- include ('../partials/nav.ejs') %>
     <main class='formMain'>
-        <form action="/users" method="POST">
+
+        <h2 class="formHeader">Log In</h2>
+
+        <form action="/sessions" method="POST">
 
           <div class= "formDiv">
          <label for="username">Username:</label><br>
@@ -15,7 +18,7 @@
 
           <div class= "formDiv">
           <label for="password">Password:</label><br>
-          <input type="text" id="password" name="password"/><br><br>
+          <input type="password" id="password" name="password"/><br><br>
           </div>
 
           <div class= "formDiv" id="formSubmitDiv">

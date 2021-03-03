@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const app = express()
 const db = mongoose.connection;
+const session = require('express-session')
 
 //PORT
 const PORT = process.env.PORT || 3000;
@@ -24,6 +25,14 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+require('dotenv').config()
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false
+    })
+)
 
 //MODELS
 const seed = require('./models/seed.js')
@@ -32,6 +41,8 @@ const Actor = require('./models/actormodel.js')
 //CONTROLLERS
 const userController = require('./controllers/users_controller.js')
 app.use('/users', userController)
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
 
 //ROUTES//
 
@@ -39,14 +50,17 @@ app.use('/users', userController)
 app.get('/', (req, res) => {
     Actor.find({}, (err, allActors) => {
         res.render('index.ejs', {
-            actors : allActors
+            actors : allActors,
+            currentUser : req.session.currentUser
         })
     })
 })
 
 //NEW//
 app.get('/new', (req, res) => {
-    res.render('test.ejs')
+    res.render('test.ejs', {
+        currentUser : req.session.currentUser
+    })
 })
 
 //CREATE//
@@ -75,7 +89,8 @@ app.delete('/:id', (req, res) => {
 app.get('/:id', (req, res) => {
     Actor.findById(req.params.id ,(err, foundActor) => {
         res.render('show.ejs' , {
-            actor : foundActor, 
+            actor : foundActor,
+            currentUser : req.session.currentUser 
         })
     })
 })
@@ -84,7 +99,8 @@ app.get('/:id', (req, res) => {
 app.get('/:id/edit', (req, res) => {
     Actor.findById(req.params.id, (err, foundActor) => {
         res.render('test.ejs', {
-            actor : foundActor
+            actor : foundActor,
+            currentUser : req.session.currentUser
         })
     })
 })
@@ -95,14 +111,6 @@ app.put('/:id', (req, res) => {
         res.redirect(`/${req.params.id}`)
     })
 })
-
-
-
-
-
-
-
-
 
 app.listen(PORT)
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include ('../partials/head.ejs') %>
+</head>
+<body>
+    <%- include ('../partials/nav.ejs') %>
+    <main class='formMain'>
+
+        <h2 class="formHeader">Create Account</h2>
+
+        <form action="/users" method="POST">
+
+          <div class= "formDiv">
+         <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" /><br><br>
+          </div>
+
+          <div class= "formDiv">
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password"/><br><br>
+          </div>
+
+          <div class= "formDiv" id="formSubmitDiv">
+          <input type="submit" value="Submit" id="submitButton">
+          </div>
+
+        </form>
+  </main>
+</body>
+</html>
