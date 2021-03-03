@@ -7,12 +7,12 @@
     <%- include ('./partials/nav.ejs') %>
     <main class="indexMain">
         <% for(let i = 0;i < actors.length; i++) { %>
-        <div class="indexActor">
-            <a href="<%=actors[i].id%>">
+        <a class="indexActor" href="<%=actors[i].id%>">
+           
              <img src= "<%= actors[i].img %>" id="actorImageIndex" >
-            </a> <br>
-            <a href="<%=actors[i].id%>" id="actorName"> <%= actors[i].name %></a>
-        </div>
+             <br>
+            <p > <%= actors[i].name %></p>
+        </a>
         <% } %>
     </main>
 </body>

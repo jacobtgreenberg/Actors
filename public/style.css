@@ -6,12 +6,13 @@ body {
 }
 
 nav, main {
-    /* border: 1px solid black; */
     width: 80%;
     margin: auto;
     max-width: 900px;
-    /* border-radius: 1%; */
-    /* background: #20639B; */
+}
+
+nav {
+    max-width: 800px;
 }
 
 main {
@@ -21,11 +22,11 @@ main {
 
 a, a:visited {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 p {
-    color: white;
+    color: black;
 }
 
 img {
@@ -40,21 +41,22 @@ img {
 nav {
     margin: auto;
     margin-top: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     display: flex;
     justify-content: space-between;
 }
 
 h1 {
     padding: 15px;
+    text-decoration: underline;
 }
 
-.navRight {
+/* .navRight {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-right: 2em;
-}
+} */
 
 ul li{
     list-style: none;
@@ -69,40 +71,38 @@ ul li{
 /* INDEX */
 #actorImageIndex {
     width: 180px;
-    margin-bottom: 1em; 
-    /* width: 50%; */
-}
-
-
-
-#actorName {
-    /* margin-top: 2em; */
+    margin-bottom: 1em;
 }
 
 .indexActor {
     display: inline-block;
     margin: 8px;
     border: 1px solid grey;
-    /* height: 200px;
-    width: 200px; */
     background: white;
-    padding: 3em 3em 2em 3em;
+    padding: 2em 2em 1em 2em;
 }
 
-.indexActor a {
-    color: black;
+.indexActor p {
+    margin: 0;
 }
 
 .indexMain {
     text-align: center;
-    padding: 1em 0 .5em 0;
+    /* padding: 1em 0 .5em 0; */
 }
 /* SHOW */
 .actorMain {
     display: flex;
+    background: white;
+    border: 1px solid black;
+    padding-top: 1em;
+    max-width: 800px;
+    /* justify-content: space-around; */
 }
+
 #actorImg {
-    width: 80%;
+    width: 60%;
+    margin-top: 1em;
 }
 
 .left, .right {
@@ -113,16 +113,33 @@ ul li{
     text-align: center;
 }
 
-.right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.right p {
+    margin-top: 2em;
+}
+
+.edit {
+    background: white;
+    border: 1px solid black;
+    padding: .5em 1.5em .5em 1.5em;
 }
 
 .actorButtons {
     display: flex;
     justify-content: space-around;
+    font-weight: bold;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    width: 60%;
+    max-width: 500px;
+
 }
+#deleteButton {
+    font-weight: bold;
+    background: white;
+    border: 1px solid black;
+    padding: .5em 1em .5em 1em;
+}
+
 /* FORM */
 input[type="text"],input[type="password"] {
     width: 100%;
@@ -134,28 +151,29 @@ input[type="submit"]{  /*This affects edit, update, and delete*/
     font-family: "Montserrat";
     font-size: 1em;
     background: none;
-    color: white;
+    color: black;
 }
 
 #submitButton {
     padding: .5em 1em .5em 1em;
-    border: 1px solid white;
+    border: 1px solid black;
+    background: white;
 }
 
 .formHeader {
     text-align: center;
-    color: white;
+    color: black;
 }
 
 textarea {
     width: 100%;
-    height: 80px;
+    height: 120px;
     margin: auto;
 }
 
 label{
     width:40%;
-    color: white;
+    color: black;
 }
 
 form {

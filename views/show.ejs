@@ -8,17 +8,21 @@
     <main class="actorMain">
             <div class="left">
                 <img id="actorImg" src= "<%= actor.img %>" >
-                <p> <%= actor.name %></p>
+                <h2> <%= actor.name %></h2>
+       
             </div>
+           
             <div class="right">
                 <p> <%= actor.bio %> </p>
-                <div class="actorButtons">
-                    <a href= "/<%=actor.id%>/edit" class="hover">Edit</a>
-                    <form action="/<%=actor.id%>?_method=DELETE" method="POST">
-                        <input type=Submit value="Delete Entry" class='hover'>
-                    </form>
-                </div>
             </div>
+      
     </main>
+
+    <div class="actorButtons">
+        <a href= "/<%=actor.id%>/edit" class="hover edit">Edit</a>
+        <form action="/<%=actor.id%>?_method=DELETE" method="POST">
+            <input type=Submit value="Delete Entry" class='hover' id="deleteButton">
+        </form>
+    </div>
 </body>
 </html>
