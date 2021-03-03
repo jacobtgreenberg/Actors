@@ -19,13 +19,19 @@ mongoose.connect(MONGODB_URI, {
 
 db.on('open' , ()=>{})
 
+//MIDDLEWARE
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
+//MODELS
 const seed = require('./models/seed.js')
 const Actor = require('./models/actormodel.js')
+
+//CONTROLLERS
+const userController = require('./controllers/users_controller.js')
+app.use('/users', userController)
 
 //ROUTES//
 
