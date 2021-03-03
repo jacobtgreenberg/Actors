@@ -49,11 +49,21 @@ h1 {
     padding: 15px;
 }
 
-#navAdd {
+.navRight {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-right: 2em;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 2em;
+}
+
+#logOut {
+    outline: none;
 }
 
 /* INDEX */
@@ -112,7 +122,7 @@ input[type="submit"]{  /*This affects edit, update, and delete*/
 
 #submitButton {
     padding: .5em 1em .5em 1em;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .formHeader {
