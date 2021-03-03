@@ -19,8 +19,8 @@
     </main>
 <% if(currentUser){%>
     <div class="actorButtons">
-        <a href= "/<%=actor.id%>/edit" class="hover edit">Edit</a>
-        <form action="/<%=actor.id%>?_method=DELETE" method="POST">
+        <a href= "/actors/<%=actor.id%>/edit" class="hover edit">Edit</a>
+        <form action="/actors/<%=actor.id%>?_method=DELETE" method="POST">
             <input type=Submit value="Delete Entry" class='hover' id="deleteButton">
         </form>
     </div>

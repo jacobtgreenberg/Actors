@@ -44,73 +44,11 @@ app.use('/users', userController)
 const sessionsController = require('./controllers/sessions_controller.js')
 app.use('/sessions', sessionsController)
 const actorsController = require('./controllers/actors_controller.js')
+app.use('/actors', actorsController)
 
-//ROUTES//
-
-//INDEX//
-app.get('/', (req, res) => {
-    Actor.find({}, (err, allActors) => {
-        res.render('actors/index.ejs', {
-            actors : allActors,
-            currentUser : req.session.currentUser
-        })
-    })
-})
-
-//NEW//
-app.get('/new', (req, res) => {
-    res.render('actors/test.ejs', {
-        currentUser : req.session.currentUser
-    })
-})
-
-//CREATE//
-app.post('/', (req, res) => {
-    console.log(req.body)
-    Actor.create(req.body, (err, newActor) => {
-        res.redirect('/')
-    })
-})
-
-//SEED//
-app.get('/seed', (req, res) => {
-    Actor.create(seed, (error, data) => {
-        res.redirect('/')
-    })
-})
-
-//DELETE//
-app.delete('/:id', (req, res) => {
-    Actor.findByIdAndDelete(req.params.id, (err, deletedActor) => {
-        res.redirect('/')
-    })
-})
-
-//SHOW//
-app.get('/:id', (req, res) => {
-    Actor.findById(req.params.id ,(err, foundActor) => {
-        res.render('actors/show.ejs' , {
-            actor : foundActor,
-            currentUser : req.session.currentUser 
-        })
-    })
-})
-
-//EDIT//
-app.get('/:id/edit', (req, res) => {
-    Actor.findById(req.params.id, (err, foundActor) => {
-        res.render('actors/test.ejs', {
-            actor : foundActor,
-            currentUser : req.session.currentUser
-        })
-    })
-})
-
-//UPDATE//
-app.put('/:id', (req, res) => {
-    Actor.findByIdAndUpdate(req.params.id, req.body, (err,updatedModel) => {
-        res.redirect(`/${req.params.id}`)
-    })
+//HOME
+app.get('/' , (req, res) => {
+    res.redirect('/actors')
 })
 
 app.listen(PORT)

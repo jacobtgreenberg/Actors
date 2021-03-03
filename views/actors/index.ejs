@@ -7,7 +7,7 @@
     <%- include ('../partials/nav.ejs') %>
     <main class="indexMain">
         <% for(let i = 0;i < actors.length; i++) { %>
-        <a class="indexActor" href="<%=actors[i].id%>">
+        <a class="indexActor" href="actors/<%=actors[i].id%>">
            
              <img src= "<%= actors[i].img %>" id="actorImageIndex" >
              <br>

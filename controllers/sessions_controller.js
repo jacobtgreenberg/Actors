@@ -19,7 +19,7 @@ sessions.post('/', (req, res) => {
         } else {
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.currentUser = foundUser
-                res.redirect('/')
+                res.redirect('/actors')
             } else {
                 res.send('<a href="/">password does not matcb</a>')
             }
@@ -29,7 +29,7 @@ sessions.post('/', (req, res) => {
 
 sessions.delete('/', (req, res) => {
     req.session.destroy(() => {
-      res.redirect('/')
+      res.redirect('/actors')
     })
   })
 
