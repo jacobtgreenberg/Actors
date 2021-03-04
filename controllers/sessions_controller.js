@@ -9,19 +9,25 @@ sessions.get('/new', (req, res) => {
     })
 })
 
+sessions.get('/notfound' , (req, res) => {
+    res.render('sessions/user_not_found.ejs', {
+        currentUser: req.session.currentUser
+    })
+})
+
 sessions.post('/', (req, res) => {
     User.findOne({username : req.body.username}, (err, foundUser) => {
         if(err) {
             console.log(err)
             res.render('sessions/error.ejs')
         } else if (!foundUser) {
-            res.send('<a href="/">User not found</a>')
+            res.redirect('/sessions/notfound')
         } else {
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.currentUser = foundUser
                 res.redirect('/actors')
             } else {
-                res.send('<a href="/">password does not matcb</a>')
+                res.send('/sessions/notfound')
             }
         }
     })
