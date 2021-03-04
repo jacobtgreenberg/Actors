@@ -4,7 +4,7 @@ ActorsBase is a directory of actors with full CRUD functionality for those who s
 
 
 ## Modules Used:
--Node (a framework for CRUD functionality on a server/database)
+-Node (a framework for CRUD functionality on a server/database)//
 -Express (a library used with node.js)
 -Body-parser (body-parsing middleware to parse incoming requests)
 -Ejs (templating to generate HTML with JavaScript)
