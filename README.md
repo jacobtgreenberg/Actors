@@ -11,3 +11,5 @@ ActorsBase is a directory of actors with full CRUD functionality for those who s
 -Bcrypt (secures passwords with hashing functionality) <br/>
 -dotenv (loads environmental variables) <br/>
 -Express-session (used to maintain userdata)
+
+https://calm-refuge-29219.herokuapp.com/actors
