@@ -102,11 +102,33 @@ h2 {
     /* justify-content: space-around; */
 }
 
-#actorImg {
+.actorImgBox {
+    position: relative;
     width: 60%;
     margin: 0 auto;
     margin-top: 1em;
 }
+
+.actorImgBox::after {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+}
+
+#actorImg {
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* #actorImg {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 1em;
+} */
 
 .left, .right {
     width: 48%;
